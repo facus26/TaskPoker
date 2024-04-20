@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ROSE 346.84 77.17% 49.8% */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 346.84 77.17% 49.8% ;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 346.84 77.17% 49.8% ;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 346.84 77.17% 49.8% ;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+@layer components {
+  .planning-table {    
+    @apply grid gap-4 grid-cols-[10.4rem,1fr,10.4rem] grid-rows-[auto,1fr,auto] m-auto;
+    grid-template-areas:
+        "left top right"
+        "left table right"
+        "left bottom right";
+  }
+
+  .planning-table .table {
+    @apply w-64 h-28 bg-rose-200 dark:bg-secondary border rounded-2xl;
+    @apply flex flex-col gap-1 items-center justify-center;
+    grid-area: table;
+  }
+
+  .planning-table .table-right {
+    @apply flex flex-col justify-evenly items-start;
+    grid-area: right;
+  }
+
+  .planning-table .table-left {
+    @apply flex flex-col justify-evenly items-end;
+    grid-area: left;
+  }
+
+  .planning-table .table-top {
+    @apply flex justify-around;
+    grid-area: top;
+  }
+
+  .planning-table .table-bottom {
+    grid-area: bottom;
+  }
+
+  .vote-card {
+    @apply flex items-center justify-center w-11 h-16;
+    @apply border rounded border-primary dark:border-secondary;
+    @apply text-lg font-bold text-primary dark:text-secondary-foreground;
+    @apply dark:bg-slate-700;
+  }
+
+  .vote-card.no-selected {
+    @apply bg-gray-300 border-gray-300 dark:border-secondary;
+    @apply text-black;
+  }
+
+  .vote-card.selected {
+    @apply bg-primary dark:bg-secondary;
+  }
+}
