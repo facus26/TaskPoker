@@ -1,2 +1,2 @@
-# taskpoker
-Pequeño proyecto para poder realizar planning poker
+# TaskPoker
+Pequeño poryecto para planigicar, utilizando C# con SignalR para el Back y ReactJS para el front.
